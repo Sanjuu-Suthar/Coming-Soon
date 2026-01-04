@@ -123,4 +123,10 @@ footer {
     footer {
         padding-bottom: 50px;
     }
+
+    /* Hide social icons on mobile but keep bottom margin */
+    .socials {
+        display: none; /* icons hidden */
+        margin-bottom: 20px; /* bottom spacing */
+    }
 }
