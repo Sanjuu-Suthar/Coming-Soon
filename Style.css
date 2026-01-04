@@ -8,29 +8,31 @@
 }
 
 /* ===============================
-   BODY BACKGROUND (IMAGE)
+   BODY BACKGROUND
 ================================ */
 body {
     font-family: 'Poppins', sans-serif;
-    min-height: 100vh;
-    overflow: hidden;
-    position: relative;
+    height: 100vh;
     color: #ffffff;
 
-    /* Background Image */
+    /* IMPORTANT: ONE SCREEN ONLY */
+    overflow: hidden;
+
     background-image: url("Pictures/Background-image.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+
+    /* FLEX LAYOUT */
+    display: flex;
+    flex-direction: column;
 }
 
 /* ===============================
    MAIN CONTAINER
 ================================ */
 .container {
-    position: relative;
-    z-index: 2;
-    min-height: 100vh;
+    flex: 1; /* fills available space */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -47,8 +49,7 @@ body {
     font-weight: 700;
     letter-spacing: 6px;
     line-height: 1.1;
-    margin-bottom: 10px;
-    color: #ffffff;
+    margin-bottom: 12px;
 }
 
 .container p {
@@ -57,25 +58,21 @@ body {
     line-height: 1.6;
 }
 
-
 /* ===============================
    FOOTER
 ================================ */
 footer {
-    position: absolute;
-    bottom: 20px;
-    width: 100%;
     text-align: center;
     font-size: 13px;
     color: #aaaaaa;
-    z-index: 2;
+    padding-bottom: 50px; /* fixed typo */
 }
 
 /* ===============================
    SOCIAL ICONS
 ================================ */
 .socials {
-    margin-top: 12px;
+    margin-top: 10px;
     display: flex;
     justify-content: center;
     gap: 18px;
@@ -96,22 +93,34 @@ footer {
 }
 
 .socials a:hover {
-    background: #f3f3f3;
-    color: #000;
+    background: #ffffff;
+    color: #000000;
     transform: translateY(-4px) scale(1.05);
     box-shadow: 0 10px 20px rgba(255, 255, 255, 0.35);
 }
 
 /* ===============================
-   RESPONSIVE
+   X (Twitter) ICON FIX
+================================ */
+.socials a i.fa-x-twitter {
+    font-size: 17px; /* slightly smaller to match other icons */
+}
+
+/* ===============================
+   RESPONSIVE (MOBILE)
 ================================ */
 @media (max-width: 768px) {
+
     .container h1 {
         font-size: 42px;
         letter-spacing: 4px;
     }
 
-    form input {
-        width: 240px;
+    .container p {
+        font-size: 15px;
+    }
+
+    footer {
+        padding-bottom: 50px;
     }
 }
